@@ -8,7 +8,6 @@ function Home(props) {
     if(props.username!=="" && props.room!==""){
       props.socket.emit("join_room",{username:props.username,room:props.room})
       navigate("/chat",{replace:true})
-      console.log("hello")
 
     }
     

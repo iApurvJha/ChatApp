@@ -1,0 +1,89 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: skyblue;
+    box-sizing: border-box;
+}
+.outerDiv{
+    display: flex;
+    justify-content: flex-end;
+}
+.containerCenter{
+    height: 75vh;
+    width: 75vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    gap: 1rem;
+    overflow: auto;
+
+}
+
+
+.details{
+    color: skyblue;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.message{
+    width: 35rem;
+    height: 5rem;
+    background-color: blue;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.userMsg{
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    text-align: left;
+    padding: 0.5rem;
+
+}
+
+
+
+/* ***********Message Box Style*********************** */
+
+
+
+.sendMsgOuterdiv{
+    /* border: 2px solid black; */
+    display: flex;
+    width: 100vw;
+    height: 21vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.sendMsgDiv{
+    /* border: 2px solid black; */
+    width: 65vw;
+    height: 5vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+}
+.sendMsgInput{
+    margin: 2rem;
+    border-radius: 10px;
+    width: 25rem;
+    height: 2.5rem;
+
+}
+.sendMsgButton{
+    color: blue;
+    font-weight: bolder;
+    background-color: skyblue;
+    margin: 2rem;
+    border-radius: 10px;
+    width: 9rem;
+    height: 2.5rem;
+}
