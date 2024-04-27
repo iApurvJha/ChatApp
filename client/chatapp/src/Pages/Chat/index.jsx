@@ -8,7 +8,7 @@ function Chat({username,room,socket}) {
   return (
     <div >
       <div className={styles.Container}>
-        <RoomUsers />
+        <RoomUsers socket={socket} username={username} room={room} />
         <Messages socket={socket} />
       </div>
       <SendMessage socket={socket} username={username} room={room} />
