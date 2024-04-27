@@ -27,30 +27,30 @@ function Messages({socket}) {
 
 
   return (
-    <div className={styles.outerDiv}>
-    <div  className={styles.containerCenter} >
-      {/* <div className={styles.message} > */}
-          {messages.map((el,index)=>{
-            return(
-            <div  key={index} className={styles.message}>
-              <div className={styles.details}>
-                <div>{el.username}</div>
-                <div>{formatDate(el.__createdtime__)}</div>
-              </div>
-              <div className={styles.userMsg}>{el.message}</div>
+    <div >
+      <div className={styles.Second}>
+        <div  className={styles.containerCenter} >
+          {/* <div className={styles.message} > */}
+              {messages.map((el,index)=>{
+                console.log(el)
+                return(
+                          <div  key={index} className={styles.message}>
+                            <div className={styles.details}>
+                              <div>{el.username}</div>
+                              <div>{formatDate(el.__createdtime__)}</div>
+                            </div>
+                            <div className={styles.userMsg}>{el.message}</div>
 
-            </div>
+                          </div>)
 
-
-            )
-
+                
+                
+              })}
             
-            
-          })}
-        
-      {/* </div> */}
+          {/* </div> */}
+        </div>
+      </div>
     </div>
-  </div>
   )
 }
 

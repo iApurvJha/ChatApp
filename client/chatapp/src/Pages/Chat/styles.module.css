@@ -5,12 +5,14 @@ body{
     box-sizing: border-box;
 }
 .outerDiv{
+    /* change */
     display: flex;
     justify-content: flex-end;
 }
 .containerCenter{
     height: 75vh;
     width: 75vw;
+    /* change  */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +26,7 @@ body{
 
 .details{
     color: skyblue;
+    /* change  */
     display: flex;
     justify-content: space-between;
     padding: 0.5rem;
@@ -87,3 +90,62 @@ body{
     width: 9rem;
     height: 2.5rem;
 }
+
+
+
+
+/* ***********Room User Box Style*********************** */
+
+/* .roomUserOuterDiv{
+    width: 24%;
+    height: 100%;
+    background-color: red;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+
+} */
+
+
+.Container{    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid red;
+    flex-direction: row;
+
+
+}
+.First{
+    background-color: aquamarine;    
+    width: 25%;
+    height: 75vh;
+    border: 2px solid blue;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+
+}
+.Second{   
+    background-color: aqua; 
+    width: 100%;
+    height: 75vh;
+    border: 2px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Third{    
+    width: 100%;
+    height: 22vh;
+    border: 2px solid black;
+    display: flex;
+    /* flex-basis: 100%; 
+    align-self: flex-start; */
+
+}
+/* .roomInnerDiv{
+    
+} */
