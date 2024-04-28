@@ -12,14 +12,6 @@ function roomUsers({socket, username,room}) {
   useEffect(()=>{
     socket.on("chatroom_users",(data)=>{
       setRoomName(data[0].room)
-      console.log(`I am chat room users list `)
-      console.log(`${data}`)
-      // const updatedUsers=data.map((el)=>{
-      //   console.log(el)
-      //   return (el.username)
-      // })
-      
-      // setUsers(updatedUsers)
       setUsers(data)
     })
   return () => socket.off('chatroom_users');
@@ -45,8 +37,7 @@ function roomUsers({socket, username,room}) {
         <ul>
           Users
           {users.map((el,ind)=>{
-            console.log(`I am the user val ${el.username}`)
-            return <li style={{ color: el.id === socket.id ? "red" : "black" }}> <h3 key={el.id}>{el.username}</h3> </li>
+            return <li key={el.id} className={styles.userList} style={{ fontWeight: el.id === socket.id ? "bold" : "normal" }}> {el.username} </li>
           })}
         </ul>
       </div>

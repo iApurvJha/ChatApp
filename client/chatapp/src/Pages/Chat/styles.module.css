@@ -5,14 +5,12 @@ body{
     box-sizing: border-box;
 }
 .outerDiv{
-    /* change */
     display: flex;
     justify-content: flex-end;
 }
 .containerCenter{
     height: 75vh;
     width: 75vw;
-    /* change  */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,15 +94,6 @@ body{
 
 /* ***********Room User Box Style*********************** */
 
-/* .roomUserOuterDiv{
-    width: 24%;
-    height: 100%;
-    background-color: red;
-    display: inline-flex;
-    justify-content: center;
-    flex-direction: column;
-
-} */
 
 
 .Container{    
@@ -112,16 +101,15 @@ body{
     height: 100%;
     display: flex;
     justify-content: space-between;
-    border: 2px solid red;
     flex-direction: row;
 
 
 }
 .First{
-    background-color: aquamarine;    
+    background-color: skyblue;    
     width: 25%;
     height: 75vh;
-    border: 2px solid blue;
+    border: 2px solid black;
     justify-content: start;
     align-items: center;
     flex-direction: column;
@@ -130,10 +118,10 @@ body{
 
 }
 .Second{   
-    background-color: aqua; 
+    background-color: skyblue; 
     width: 100%;
     height: 75vh;
-    border: 2px solid green;
+    border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,10 +131,14 @@ body{
     height: 22vh;
     border: 2px solid black;
     display: flex;
-    /* flex-basis: 100%; 
-    align-self: flex-start; */
+
 
 }
-/* .roomInnerDiv{
-    
-} */
+
+
+/* *************Users list style************* */
+
+.userList{
+    list-style: none;
+    padding: 0.5rem
+}

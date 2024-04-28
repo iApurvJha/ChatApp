@@ -14,24 +14,6 @@ function Chat({username,room,socket}) {
       <SendMessage socket={socket} username={username} room={room} />
       
     </div>
-    // {/* <div> */}
-
-    
-    //     <div id="Container" className={styles.Container}>
-    //         <div className={styles.First} id="First">
-    //             <div>first</div>
-    //             <div>first</div>
-    //             <div>first</div>
-    //             <div>first</div>
-    //             <div>first</div>
-    //             <div>first</div>
-
-    //         </div>
-    //         <div className={styles.Second} id="Second">Second</div>
-            
-    //     </div>
-    //     <div className={styles.Third} id="Third">Third</div>
-    // </div>
   )
 }
 

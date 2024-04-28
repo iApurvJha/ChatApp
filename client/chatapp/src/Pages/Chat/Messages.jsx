@@ -7,8 +7,6 @@ function Messages({socket}) {
 
     useEffect(()=>{
         socket.on("receive_msg",(data)=>{
-            console.log("i am recive msg data")
-            console.log(data)
             setMessages((state)=>{
                return [...state,{
                     message:data.message,

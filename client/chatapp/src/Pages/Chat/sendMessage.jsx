@@ -14,7 +14,6 @@ function sendMessage({socket,username,room}) {
 
   function Msg(){
     if(sendMessage!=""){
-      console.log("i am king")
       const __createdtime__=Date.now()
       socket.emit("send_message",{username,room,message:sendMessage,__createdtime__})
       setSendMessage("")

@@ -1,6 +1,5 @@
 import express from "express"
 import cors from "cors"
-import dotenv from "dotenv/config"
 import http from "http"
 import {Server} from "socket.io"
 
@@ -12,7 +11,7 @@ app.use(cors())
 const server=http.createServer(app)
 const io=new Server(server,{
     cors:{
-        origin:"http://localhost:5173",
+        origin:"*",
         methods:["GET","POST"]
     }
 })
@@ -26,15 +25,12 @@ io.on("connection",(socket)=>{
     // console.log(`connected ${socket.id}`)
 
     socket.on("join_room",(data)=>{
-        console.log("hello")
-        // console.log(data)
+
         const {username,room}=data
         socket.join(room)
     
         socket.on("send_message",(data)=>{
-            // console.log("i am king 2")
-            // console.log(data)
-            // const {username,room,sendMessage,__createdtime__}=data
+
             io.to(data.room).emit("receive_msg",data)
 
         })
@@ -59,38 +55,30 @@ io.on("connection",(socket)=>{
             return el.room===chatRoom
         })
 
-        // console.log("i am all users from join room")
-        // console.log(allUsers)
-        // console.log("i am chat users join room")
-        // console.log(chatRoomUser)
         
 
 
-        //socket.emit("chatroom_users",chatRoomUser)
-        socket.to(room).emit('chatroom_users', chatRoomUser);
-        socket.emit('chatroom_users', chatRoomUser);
+        // socket.to(room).emit('chatroom_users', chatRoomUser);
+        // socket.emit('chatroom_users', chatRoomUser);
+
+        //change 
+        io.to(room).emit('chatroom_users', chatRoomUser);
+
+
 
         socket.on("leave_room",(data)=>{
-            console.log("i am chat users before leaving leave room")
-            console.log(chatRoomUser) 
-            console.log("i am all users before leaving the leave room")
-            console.log(allUsers)
-            socket.leave(data.room)
+
             allUsers=allUsers.filter((el)=>{
                 return el.id!=data.id
             })
-            console.log("i am all users from  leave room after leaving")
-            console.log(allUsers)
+
             
             chatRoomUser=chatRoomUser.filter((el)=>{
                 return el.id!=data.id
             })
-            console.log("i am chat users leave room")
-            console.log(chatRoomUser)
 
-            // console.log("working on leave room")
-            // console.log(`i am the `)
-            // console.log(data)
+
+
             __createdtime__=Date.now()
             socket.to(data.room).emit("receive_msg",{
                 message:`${data.username} has left the room `,
@@ -99,8 +87,6 @@ io.on("connection",(socket)=>{
 
             })
             
-            // console.log(chatRoomUser)
-            //socket.emit("chatroom_users",chatRoomUser)
             socket.to(data.room).emit('chatroom_users', chatRoomUser);
         })
 
